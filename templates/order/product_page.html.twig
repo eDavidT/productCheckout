@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% for category in categories %}
+<div class='row'>
+    <h4>{{ category.getName() }}</h4>
+    {% for product in category.getProducts() %}
+        {% include 'order/components/product.html.twig' with {
+            'product': product 
+        } %}
+    {% endfor %}
+</div>
+{% endfor %}
+{% endblock body %}
