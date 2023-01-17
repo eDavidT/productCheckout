@@ -6,13 +6,19 @@
         {
             "label": "Run Server",
             "type": "shell",
-            "command": "symfony server:start; symfony open:local",
+            "command": "symfony open:local;symfony server:start",
             "problemMatcher": []
         },
         {
             "label": "Run Dump Server",
             "type": "shell",
             "command": "php bin\\console server:dump",
+            "problemMatcher": []
+        },
+        {
+            "label": "Webpack Watch",
+            "type": "shell",
+            "command": "yarn watch",
             "problemMatcher": []
         }
     ]
