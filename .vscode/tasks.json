@@ -6,7 +6,7 @@
         {
             "label": "Run Server",
             "type": "shell",
-            "command": "symfony open:local;symfony server:start",
+            "command": "symfony server:start",
             "problemMatcher": []
         },
         {
@@ -19,6 +19,12 @@
             "label": "Webpack Watch",
             "type": "shell",
             "command": "yarn watch",
+            "problemMatcher": []
+        },
+        {
+            "label": "Symfony Server Open",
+            "type": "shell",
+            "command": "symfony open:local",
             "problemMatcher": []
         }
     ]
