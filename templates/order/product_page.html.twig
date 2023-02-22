@@ -2,7 +2,7 @@
 
 {% block body %}
 {% for category in categories %}
-<div class='row'>
+<div class='row{% if loop.first != true %} pt-5{% endif %}' >
     <h4>{{ category.getName() }}</h4>
     {% for product in category.getProducts() %}
         {% include 'order/components/product.html.twig' with {
