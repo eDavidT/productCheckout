@@ -19,7 +19,7 @@ class Product
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $description = null;
 
     #[ORM\Column(nullable: true)]
@@ -34,7 +34,7 @@ class Product
     #[ORM\ManyToMany(targetEntity: Order::class, mappedBy: 'basket')]
     private Collection $orders;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?bool $active = null;
 
     public function __construct()
