@@ -5,9 +5,11 @@
 <div class='row{% if loop.first != true %} pt-5{% endif %}' >
     <h4>{{ category.getName() }}</h4>
     {% for product in category.getProducts() %}
-        {% include 'order/components/product.html.twig' with {
-            'product': product 
-        } %}
+        {% if product.active == true %}
+            {% include 'order/components/product.html.twig' with {
+                'product': product 
+            } %}
+        {% endif %}
     {% endfor %}
 </div>
 {% endfor %}

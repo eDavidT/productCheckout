@@ -20,7 +20,7 @@ class ProductFixtures extends Fixture
         $manager->persist($product1);
 
         $product2 = new Product();
-        $product2->setName('Redken Shampoo');
+        $product2->setName('Redken Shampoo 2');
         $product2->setPrice(17.99);
         $manager->persist($product2);
 

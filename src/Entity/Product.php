@@ -34,13 +34,14 @@ class Product
     #[ORM\ManyToMany(targetEntity: Order::class, mappedBy: 'basket')]
     private Collection $orders;
 
-    #[ORM\Column(nullable: true)]
-    private ?bool $active = null;
+    #[ORM\Column()]
+    private bool $active = true;
 
     public function __construct()
     {
         $this->categories = new ArrayCollection();
         $this->orders = new ArrayCollection();
+        $this->active = true;
     }
 
     public function getId(): ?int
