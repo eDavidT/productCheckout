@@ -27,9 +27,10 @@ class Category
     #[ORM\ManyToMany(targetEntity: Product::class, inversedBy: 'categories')]
     private Collection $products;
 
-    public function __construct()
+    public function __construct(string $name = '')
     {
         $this->products = new ArrayCollection();
+        $this->name = $name;
     }
 
     public function getId(): ?int
