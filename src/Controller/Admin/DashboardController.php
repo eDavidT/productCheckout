@@ -13,7 +13,7 @@ use App\Entity\Product;
 
 class DashboardController extends AbstractDashboardController
 {
-    #[Route('/admin', name: 'admin')]
+    #[Route('/admin', name: 'adminDashboard')]
     public function index(): Response
     {
         // return parent::index();
