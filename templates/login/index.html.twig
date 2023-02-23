@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login
+{% endblock %}
+
+{% block body %}
+	<div class="row justify-content-md-center">
+		<div class="col-6">
+        <h1 class="text-center">Login</h1>
+			{% if error %}
+				<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+			{% endif %}
+
+			<form
+				action="{{ path('app_login') }}" method="post">
+				<!-- Email input -->
+				<div class="form-outline mb-4">
+					<input type="text" id="username" class="form-control" name="_username"/>
+					<label class="form-label" for="username">Username</label>
+				</div>
+
+				<!-- Password input -->
+				<div class="form-outline mb-4">
+					<input type="password" id="password" class="form-control" name="_password"/>
+					<label class="form-label" for="password">Password</label>
+				</div>
+
+				<!-- 2 column grid layout for inline styling -->
+				<div class="row mb-4">
+					<div
+						class="col d-flex justify-content-center">
+						<!-- Checkbox -->
+						<div class="form-check">
+							<input class="form-check-input" type="checkbox" value="" id="remember_me" name="_remember_me" checked/>
+							<label class="form-check-label" for="remember_me">
+								Remember me
+							</label>
+						</div>
+					</div>
+
+					{# <div
+									class="col">
+									<!-- Simple link -->
+									<a href="#!">Forgot password?</a>
+								</div> #}
+				</div>
+
+				<!-- Submit button -->
+				<button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+			</form>
+		</div>
+	</div>
+{% endblock %}
