@@ -26,6 +26,10 @@ class Order
     #[ORM\ManyToMany(targetEntity: Product::class, inversedBy: 'orders')]
     private Collection $basket;
 
+    #[ORM\ManyToOne(inversedBy: 'orders')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
+
     public function __construct()
     {
         $this->basket = new ArrayCollection();
@@ -80,6 +84,18 @@ class Order
     public function removeBasket(Product $basket): self
     {
         $this->basket->removeElement($basket);
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }
