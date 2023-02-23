@@ -34,6 +34,7 @@ class UserFixtures extends Fixture
         $adminUser = new User();
         $adminUser->setUsername('gandrade');
         $adminUser->setName('Giovanny Andrade');
+        $adminUser->addRole('ROLE_ADMIN');
         $plaintextPassword = 'test';
         $hashedPassword = $this->hasher->hashPassword(
             $adminUser,
