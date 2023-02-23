@@ -12,7 +12,7 @@ import './styles/global.scss';
 import 'bootstrap';
 
 // start the Stimulus application
-import './bootstrap';
+import './stimulus';
 
 import '@fortawesome/fontawesome-free/js/fontawesome'
 import '@fortawesome/fontawesome-free/js/solid'
